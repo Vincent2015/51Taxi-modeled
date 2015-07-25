@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+     <link rel="stylesheet" href="../css/api.css">
+     <link rel="stylesheet" href="../css/common.css">
+    <title>正在呼叫车主</title>
+    <style>
+       #header span{
+
+        height: 44px;
+        line-height: 44px;
+
+       }
+
+     
+       .head-left{
+        float: left;
+        margin-left:10px;
+       font-size: 11pt;
+       background: url(../image/wallet_base_action_bar_back_normal.png) no-repeat;
+       background-position: left center;
+       background-size: 30% 30%;
+       margin-left: -5px;
+       }
+
+       .head-left p{
+        margin-left: 35px;
+        margin-top:1px;
+       }
+       .head-right{
+
+         float: right;
+        margin-right: 5px;
+        font-size: 15pt;
+
+       }
+       #main{
+            background: #E6E6E6;
+            margin: 0;
+            padding: 0;
+
+       }
+
+        #top{
+         display:block;
+          margin: 0 auto;
+          position: absolute;
+          padding-top: 64px;
+          width: 100%;
+          height: 150px;
+          background:url(../image/radar_scan_bg.png) no-repeat center center;
+          background-size: cover;
+
+       } 
+       #top img{
+         display:block;
+         position:relative;
+         width:150px;
+         height:150px;
+         margin:0 auto;
+         padding-top:5em;
+       }
+       
+       #top .num{
+         display:block;
+         position: relative;
+         width:200px;
+        
+         margin:0 auto;
+        
+         text-align:center;
+         color: white;
+         font-size: 2.5em;
+         bottom:3em;
+         
+       
+       }
+       #top .nnum{
+         display:block;
+         position: relative;
+         width:200px;
+        
+         margin:0 auto;
+        
+         text-align:center;
+         color: white;
+         font-size: 1.25em;
+         bottom:5.5em;
+         
+       
+       }
+       
+        /*@keyframes my{
+         from  {
+                 -webkit-transform: rotate(0deg);
+                 -moz-transform: rotate(0deg);
+                 -ms-transform: rotate(0deg);
+                 -o-transform: rotate(0deg);
+                 transform: rotate(0deg);
+         }
+
+         to  {
+             -webkit-transform: rotate(360deg);
+             -moz-transform: rotate(360deg);
+             -ms-transform: rotate(360deg);
+             -o-transform: rotate(360deg);
+             transform: rotate(360deg);
+         }
+         
+
+       }*/
+       
+       
+
+       #radar {
+           margin: 0 auto;
+          position: absolute;
+          width: 100%;
+          top:80%;
+          
+         z-index: 1;
+
+         display: none;/*//动画暂未实现*/
+         
+        }
+
+        #radar img{
+          position: relative;
+          width: 100%;
+
+        }
+        #con {
+          width: 100%;
+          margin: 0 auto;
+          position: absolute;
+          bottom: 25%;
+          text-align: center;
+
+        }
+        #con p{
+          padding-bottom: 5px;
+          padding-top: 5px;
+
+        }
+        #con span{
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+         .red{
+          color: red;
+        }
+        .gr{
+          color: gray;
+        }
+       
+       #bottom{
+        
+         width:100%; 
+         height:80px;        
+         margin: 0 auto;
+         background:url(../image/order_boot_ad1.png) no-repeat center;
+         background-size:80% auto;
+         position: absolute;
+         bottom: 1%;
+         
+        
+
+       }
+        
+
+</style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <span class="head-left"><p>正在呼叫车主</p></span>
+            <span class="head-right" tapmode onclick="goback()">取消</span>
+        </div>
+        <div id="main">
+             <div id="top">
+                 
+                 <img src="../image/radar_push_number_bg.png" alt="搜寻中">
+                 
+                 <div class="num">87 </div>
+                 <div class="nnum">位车主已收到</div>
+                
+               
+                
+                 
+                <div id="radar">
+                <img src="../image/radar_scan_args.png" alt="搜寻中">
+                </div>
+             </div>
+             <div id="con">
+                <p>剩余<span class="red">4</span>分钟<p>
+                <p class="gr">休息一会儿，我们正在努力为您通知更多车主</p>
+             </div>
+             <div id="bottom">
+               
+             </div>
+
+        </div>
+
+    </div>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/common.js"></script> 
+<script type="text/javascript">
+function cancelche(){
+ api.closeToWin({
+	 name: 'passenger'
+ });
+
+}
+apiready = function(){
+    var header = $api.byId('header');
+    $api.fixIos7Bar(header);
+	
+}
+</script>  
+</body>
+</html>
